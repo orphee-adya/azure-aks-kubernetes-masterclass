@@ -75,16 +75,16 @@ echo ${AKS_VNET_SUBNET_DEFAULT_ID}
 - Create Azure AD User: aksadmin1 and associate to aksadmins ad group
 ```
 # Create Azure AD Group
-AKS_AD_AKSADMIN_GROUP_ID=$(az ad group create --display-name aksadmins --mail-nickname aksadmins --query objectId -o tsv)    
+AKS_AD_AKSADMIN_GROUP_ID=$(az ad group create --display-name aksadmins --mail-nickname aksadmins --query id -o tsv)    
 echo $AKS_AD_AKSADMIN_GROUP_ID
 
 # Create Azure AD AKS Admin User 
 # Replace with your AD Domain - aksadmin1@stacksimplifygmail.onmicrosoft.com
 AKS_AD_AKSADMIN1_USER_OBJECT_ID=$(az ad user create \
   --display-name "AKS Admin1" \
-  --user-principal-name aksadmin1@stacksimplifygmail.onmicrosoft.com \
+  --user-principal-name aksadmin1@oadyamoapaoutlook.onmicrosoft.com \
   --password @AKSDemo123 \
-  --query objectId -o tsv)
+  --query id -o tsv)
 echo $AKS_AD_AKSADMIN1_USER_OBJECT_ID
 
 # Associate aksadmin User to aksadmins Group
@@ -98,7 +98,7 @@ Password: @AKSDemo123
 ## Step-04: Pre-requisite-4: Create SSH Key
 ```
 # Create Folder
-mkdir $HOME/.ssh/aks-prod-sshkeys
+mkdir -p $HOME/.ssh/aks-prod-sshkeys
 
 # Create SSH Key
 ssh-keygen \
@@ -113,7 +113,7 @@ ssh-keygen \
 ls -lrt $HOME/.ssh/aks-prod-sshkeys
 
 # Set SSH KEY Path
-AKS_SSH_KEY_LOCATION=/Users/kalyanreddy/.ssh/aks-prod-sshkeys/aksprodsshkey.pub
+AKS_SSH_KEY_LOCATION=/home/oadya/.ssh/aks-prod-sshkeys/aksprodsshkey.pub
 echo $AKS_SSH_KEY_LOCATION
 ```
 - Reference for [Create SSH Key](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
