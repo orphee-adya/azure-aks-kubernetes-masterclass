@@ -144,7 +144,7 @@ Go to Services -> Azure Active Directory -> Properties -> Tenant ID
 
 # Set Windows Server/Node Username & Password
 AKS_WINDOWS_NODE_USERNAME=azureuser
-AKS_WINDOWS_NODE_PASSWORD="P@ssw0rd1234"
+AKS_WINDOWS_NODE_PASSWORD="P@ssw0rd12345678"
 echo $AKS_WINDOWS_NODE_USERNAME, $AKS_WINDOWS_NODE_PASSWORD
 ```
 
