@@ -181,7 +181,7 @@ az aks create --resource-group ${AKS_RESOURCE_GROUP} \
               --windows-admin-password ${AKS_WINDOWS_NODE_PASSWORD} \
               --windows-admin-username ${AKS_WINDOWS_NODE_USERNAME} \
               --node-osdisk-size 30 \
-              --node-vm-size Standard_DS2_v2 \
+              --node-vm-size Standard_D2s_v6 \
               --nodepool-labels nodepool-type=system nodepoolos=linux app=system-apps \
               --nodepool-name systempool \
               --nodepool-tags nodepool-type=system nodepoolos=linux app=system-apps \
