@@ -29,7 +29,7 @@ terraform {
 # Terraform State Storage to Azure Storage Container
   backend "azurerm" {
     resource_group_name   = "terraform-storage-rg"
-    storage_account_name  = "terraformstateazureaks"
+    storage_account_name  = "terraformstateazureaqw"
     container_name        = "tfstatefiles"
     key                   = "terraform.tfstate"
   }  
@@ -38,7 +38,7 @@ terraform {
 
 # 2. Terraform Provider Block for AzureRM
 provider "azurerm" {
-  subscription_id = "XXXXXXXX"
+  subscription_id = "0ccb83e8-f86a-427e-94ca-c2c7c86e42ef"
   features {
   }
 }
